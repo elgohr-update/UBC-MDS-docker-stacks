@@ -30,9 +30,9 @@ RUN Rscript -e "install.packages('palmerpenguins', repos='http://cran.us.r-proje
 # Install R packages from GitHub
 RUN Rscript -e "devtools::install_github('ttimbers/canlang@0.0.1')"
 
-# Install jupyter extensions (nbgitpuller, git, jupytext)
 USER root
 
+# Install jupyter extensions (nbgitpuller, git, jupytext)
 RUN pip install git+https://github.com/data-8/nbgitpuller \
     && jupyter serverextension enable --sys-prefix nbgitpuller \
     && jupyter labextension install @jupyterlab/git \
@@ -45,6 +45,10 @@ RUN pip install git+https://github.com/data-8/nbgitpuller \
     && jupyter labextension install @techrah/text-shortcuts \
     && jupyter lab build 
 RUN useradd -m -s /bin/bash -N -u 9999 jupyter
+
+# install nano text editor
+RUN apt update \
+    && apt install nano
 
 USER jupyter
 
