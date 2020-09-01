@@ -28,7 +28,7 @@ RUN conda install --quiet --yes -c conda-forge \
 RUN Rscript -e "install.packages('palmerpenguins', repos='http://cran.us.r-project.org')"
 
 # Install R packages from GitHub
-RUN Rscript -e "devtools::install_github('UBC-MDS/canlang@0.0.1')"
+RUN Rscript -e "devtools::install_github('ttimbers/canlang@0.0.1')"
 
 # Install jupyter extensions (nbgitpuller, git, jupytext)
 USER root
