@@ -40,8 +40,6 @@ RUN pip install git+https://github.com/data-8/nbgitpuller \
     && jupyter serverextension enable --py jupyterlab_git \
     && pip install jupytext --upgrade \
     && jupyter labextension install @ryantam626/jupyterlab_code_formatter \
-    && pip install jupyterlab_code_formatter \
-    && jupyter serverextension enable --py jupyterlab_code_formatter \
     && jupyter labextension install @techrah/text-shortcuts \
     && jupyter lab build 
 RUN useradd -m -s /bin/bash -N -u 9999 jupyter
@@ -49,6 +47,10 @@ RUN useradd -m -s /bin/bash -N -u 9999 jupyter
 # install nano text editor
 RUN apt update \
     && apt install nano
+
+# set nano as text editor
+ENV VISUAL nano
+ENV EDITOR "$VISUAL"
 
 USER jupyter
 
