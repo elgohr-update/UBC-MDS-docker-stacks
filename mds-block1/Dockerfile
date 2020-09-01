@@ -39,7 +39,6 @@ RUN pip install git+https://github.com/data-8/nbgitpuller \
     && pip install jupyterlab-git \
     && jupyter serverextension enable --py jupyterlab_git \
     && pip install jupytext --upgrade \
-    && jupyter labextension install @ryantam626/jupyterlab_code_formatter \
     && jupyter labextension install @techrah/text-shortcuts \
     && jupyter lab build 
 RUN useradd -m -s /bin/bash -N -u 9999 jupyter
