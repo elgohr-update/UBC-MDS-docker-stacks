@@ -25,7 +25,7 @@ RUN conda install --quiet --yes -c conda-forge \
   r-rpostgres=1.2.*
 
 # Install R packages from CRAN
-RUN Rscript -e "install.packages('palmerpenguins')"
+RUN Rscript -e "install.packages('palmerpenguins', repos='http://cran.us.r-project.org')"
 
 # Install R packages from GitHub
 RUN Rscript -e "devtools::install_github('UBC-MDS/canlang@0.0.1')"
