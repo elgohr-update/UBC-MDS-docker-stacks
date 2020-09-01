@@ -1,6 +1,6 @@
 # Copyright (c) UBC-DSCI Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=ubcmds/mdsblock1:latest
+ARG BASE_CONTAINER=ubcmds/mds-block1:latest
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Tiffany Timbers <tiffany.timbers@stat.ubc.ca>"
