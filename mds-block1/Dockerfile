@@ -51,9 +51,8 @@ RUN apt update \
 ENV VISUAL nano
 ENV EDITOR "$VISUAL"
 
-USER jupyter
-
 # Configure jupyter user
+USER jupyter
 ENV NB_USER=jupyter \
     NB_UID=9999
 ENV HOME=/home/$NB_USER
