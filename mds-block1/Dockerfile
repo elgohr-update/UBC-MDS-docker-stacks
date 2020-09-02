@@ -46,7 +46,7 @@ RUN useradd -m -s /bin/bash -N -u 9999 jupyter
 # install nano text editor & man pages & customize terminal
 RUN apt update \
     && apt install nano \
-    && apt install man-db manpages-posix \
+    && apt install -y man-db manpages-posix \
     && bind "set completion-ignore-case on" \
     && bind "set show-all-if-ambiguous on" \
     && bind 'TAB':menu-complete \
