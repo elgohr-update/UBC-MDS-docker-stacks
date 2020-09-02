@@ -43,9 +43,20 @@ RUN pip install git+https://github.com/data-8/nbgitpuller \
     && jupyter lab build 
 RUN useradd -m -s /bin/bash -N -u 9999 jupyter
 
-# install nano text editor
+# install nano text editor & man pages & customize terminal
 RUN apt update \
-    && apt install nano
+    && apt install nano \
+    && apt install man-db manpages-posix \
+    && bind "set completion-ignore-case on" \
+    && bind "set show-all-if-ambiguous on" \
+    && bind 'TAB':menu-complete \
+    && bind "set menu-complete-display-prefix on" \
+    && bind '"\e[A":history-search-backward' \
+    && bind '"\e[B":history-search-forward' \
+    && shopt -s histappend
+ENV PROMPT_COMMAND 'history -a; echo'
+ENV HISTSIZE 50000
+ENV HISTFILESIZE 50000
 
 # set nano as text editor
 ENV VISUAL nano
