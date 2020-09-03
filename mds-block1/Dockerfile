@@ -64,6 +64,9 @@ ENV HISTFILESIZE 50000
 ENV VISUAL nano
 ENV EDITOR "$VISUAL"
 
+# install canvautils
+RUN pip install canvasutils
+
 # Configure jupyter user
 USER jupyter
 ENV NB_USER=jupyter \
