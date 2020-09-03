@@ -10,6 +10,7 @@ RUN conda install --quiet --yes -c conda-forge \
     altair=4.* \
     black=19.* \
     flake8=3.* \
+    nodejs \
     pandas-profiling=1.* \
     pytest=6.* \
     seaborn=0.10.*
@@ -40,6 +41,7 @@ RUN pip install git+https://github.com/data-8/nbgitpuller \
     && jupyter serverextension enable --py jupyterlab_git \
     && pip install jupytext --upgrade \
     && jupyter labextension install @techrah/text-shortcuts \
+    && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
     && jupyter lab build 
 RUN useradd -m -s /bin/bash -N -u 9999 jupyter
 
