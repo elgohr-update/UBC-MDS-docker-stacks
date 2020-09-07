@@ -10,6 +10,7 @@ RUN conda install --quiet --yes -c conda-forge \
     altair=4.* \
     black=19.* \
     flake8=3.* \
+    memory_profiler \
     nodejs \
     pandas-profiling=1.* \
     pytest=6.* \
