@@ -22,11 +22,14 @@ RUN conda install --quiet --yes -c conda-forge \
   r-ggally=1.5.* \
   r-gridextra=2.3.* \
   r-infer=0.5.* \
+  r-janitor \
+  r-reticulate \
   r-testthat=2.3.* \
   r-rpostgres=1.2.*
 
 # Install R packages from CRAN
-RUN Rscript -e "install.packages('palmerpenguins', repos='http://cran.us.r-project.org')"
+RUN Rscript -e "install.packages('palmerpenguins', repos='http://cran.us.r-project.org')" \
+    && Rscript -e "install.packages('repurrrsive', repos='http://cran.us.r-project.org')"
 
 # Install R packages from GitHub
 RUN Rscript -e "devtools::install_github('ttimbers/canlang@0.0.1')"
