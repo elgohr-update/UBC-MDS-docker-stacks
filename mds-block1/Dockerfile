@@ -24,6 +24,7 @@ RUN conda install --quiet --yes -c conda-forge \
   r-gridextra=2.3.* \
   r-infer=0.5.* \
   r-janitor \
+  r-nycflights13 \
   r-reticulate \
   r-testthat=2.3.* \
   r-rpostgres=1.2.*
